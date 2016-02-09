@@ -2,18 +2,23 @@
   // 1) What is the purpose of the 'this keyword'?
 
       //Answer
-
+allows functions to be used by multiple objects without having to change the function
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
       //Answer
-
+      implicit binding,
+      explicit binding,
+      default binding-bound to global,
+      keyword new-
   // 3) What is the difference between call and apply?
 
       //Answer
+      call allows you to pass parameters one by one, apply allows you to enter the parameters in an array
 
   // 4) What does .bind do?
 
       //Answer
+      copies the function and holds it until invoked
 
 
 //Next Problem
@@ -24,8 +29,16 @@
   //getUsername --> which is a function that returns the current object's username property. *Don't use 'user' instead use the 'this' keyword*
 
     //Code Here
+    var user = {
+      username: 'Genghis',
+      email: gkhan@gmail.com,
+      getUsername: function(){
+        return(this.username);
+      },
 
+          }
 //Now, invoke the getUsername method and verify you got the username of the object and not anything else.
+console.log(user.getUsername());
 
 
 //Next Problem
