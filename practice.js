@@ -2,23 +2,23 @@
   // 1) What is the purpose of the 'this keyword'?
 
       //Answer
-allows functions to be used by multiple objects without having to change the function
+// allows functions to be used by multiple objects without having to change the function
   // 2) What are the four rules that govern what the 'this keyword' is bound to and describe each?
 
       //Answer
-      implicit binding,
-      explicit binding,
-      default binding-bound to global,
-      keyword new-
+      // implicit binding,
+      // explicit binding,
+      // default binding-bound to global,
+      // keyword new-
   // 3) What is the difference between call and apply?
 
       //Answer
-      call allows you to pass parameters one by one, apply allows you to enter the parameters in an array
+      // call allows you to pass parameters one by one, apply allows you to enter the parameters in an array
 
   // 4) What does .bind do?
 
       //Answer
-      copies the function and holds it until invoked
+      // copies the function and holds it until invoked
 
 
 //Next Problem
@@ -31,7 +31,7 @@ allows functions to be used by multiple objects without having to change the fun
     //Code Here
     var user = {
       username: 'Genghis',
-      email: gkhan@gmail.com,
+      email: 'gkhan@gmail.com',
       getUsername: function(){
         return(this.username);
       },
@@ -47,7 +47,15 @@ console.log(user.getUsername());
 // Write the function definitions which will make the following function invocations function properly.
 
   //Function Invocations Here
-
+  function Car(brand, model, year){
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+    this.move = 5;
+  }
+  moveCar = function(move){
+    return(this.moveCar(move + 10));
+  }
 var prius = new Car('Toyota', 'Prius', 2011);
 var mustang = new Car('Ford', 'Mustang', 2013);
 
@@ -68,7 +76,7 @@ var getYear = function(){
 
 //Note(no tests)
   //Code Here
-
+prius.year();
 
 //New Problem
 
@@ -89,9 +97,12 @@ setTimeout(getMyUsername, 5000);
 //Above you're given an object, a function, and a setTimeout invocation. After 5 seconds, what will the getUsername function return?
 //Note(no tests)
   //Answer Here
+  //iliketurtles
 
 //In the example above, what is the 'this keyword' bound to when getUsername runs?
 
-  //Answer Here
+  //Answer Here myUser
 
 //Fix the setTimeout invocation so that the user object will be the focal object when getUsername is ran.
+var second = setTimeout.bind(getMyUsername, 5000);
+second();
