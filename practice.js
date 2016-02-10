@@ -97,7 +97,7 @@ setTimeout(getMyUsername, 5000);
 //Above you're given an object, a function, and a setTimeout invocation. After 5 seconds, what will the getUsername function return?
 //Note(no tests)
   //Answer Here
-  //iliketurtles
+  //undefined
 
 //In the example above, what is the 'this keyword' bound to when getUsername runs?
 
